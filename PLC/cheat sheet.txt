@@ -1,0 +1,24 @@
+SHORT CUT PLC OMRON :
+
+C : membuat tombol Normaly Open
+/ : membuat tombol Normaly Close
+W : membuat tombol Normaly Open OR
+X : membuat tombol Normaly Close OR
+O : membuat Normal Open Coil
+Q : membuat Normal Close Coil
+I : mengeluarkan spesial instruksi
+
+CTRL+J = push switch
+CTRL +K= release switch
+CTRL+W=work online
+
+KEEP (I) = self holding (keep lebih simple)
+           FORMAT : KEEP alamat_out   
+TIMMER (I) = mengatur penyalaan output (tick =0.1S) 
+           FORMAT : TIM alamat_timer #waktu
+COUNTER (I) = up counter/pemghitung (counter )
+           FORMAT : CNT alamat nilai_counter
+
+ADDR CP1L
+INPUT 0.00 -0.11
+OUTPUT 10.00 -10.07
