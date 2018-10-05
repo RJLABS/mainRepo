@@ -122,7 +122,7 @@ void timerIsr()
 {
 //Serial.println("check");
 //-----------------------------------  
-if(!client.connected() || client.state()!=0){
+if(!client.connected() || client.state() == -1){
     if(Count_Connect==0){
       Count_dis=0;
       Count_Connect=Timeout_Connect;
@@ -136,9 +136,9 @@ if(!client.connected() || client.state()!=0){
       Count_Connect--;
       Count_dis++;
       if(Count_dis>=6){
-        Serial.print("failed to connect, reconnect=");
+        Serial.print("failed to connect, reconnect = ");
         Serial.print(client.state());
-        Serial.println("try again every 3 seconds");
+        Serial.println("try again every 3 S");
         Count_dis=0;
       }
     }
@@ -159,7 +159,7 @@ if(!client.connected() || client.state()!=0){
       String pay="pesan";
       // On cennected, publish an announcement...
       //bool MQTT::publish(String& topic, String& data, int qos, int retain)
-      client.publish(topic,pay,0,1);
+      client.publish("outTopic","payload");
       //and resubscribe
       client.subscribe("inTopic");
     }

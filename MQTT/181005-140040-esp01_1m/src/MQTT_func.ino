@@ -9,7 +9,7 @@ void callback(char* topic, byte* payload, uint32_t length){//unsigned int length
   strLength = buff.indexOf("$");
     if(strLength != -1){
       buff = buff.substring(0,strLength);
-      //Serial.println(buff);
+      Serial.println(buff);
       processBuffer();
     }
     buff="";
