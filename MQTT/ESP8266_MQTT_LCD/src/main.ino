@@ -59,9 +59,10 @@ LiquidCrystal_I2C lcd(0x27, 20, 4);
 void setup() {
     // put your setup code here, to run once:
     lcd.begin(0, 2); //ESP8266-01 I2C with pin 0-SDA 2-SCL
+    lcd.clear();
     lcd.backlight();
     lcd.setCursor(0, 0);
-    lcd.print("MQTT ESP8266");
+    lcd.print("MQTT ESP32");
     delay(1000);
  
     Serial.begin(9600);

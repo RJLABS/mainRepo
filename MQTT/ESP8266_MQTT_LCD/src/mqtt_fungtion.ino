@@ -8,10 +8,9 @@ void callback(char* topic, byte* payload, uint32_t length){//unsigned int length
   //Serial.println(Serial_data);
   strLength = buff.indexOf("$");
     if(strLength != -1){
-      lcd.clear();
       buff = buff.substring(0,strLength);
       //Serial.println(buff);
-      lcd.setCursor(0, 1);
+      lcd.setCursor(0, 2);
       lcd.print(buff);
       processBuffer();
     }
